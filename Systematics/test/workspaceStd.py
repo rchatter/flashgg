@@ -210,8 +210,8 @@ if customize.processId.count("h_") or customize.processId.count("vbf_") or custo
             phosystlabels.append("MaterialForward%s01sigma" % direction)
             phosystlabels.append("FNUFEB%s01sigma" % direction)
             phosystlabels.append("FNUFEE%s01sigma" % direction)
-            phosystlabels.append("MCScaleGain6EB%s01sigma" % direction)
-            phosystlabels.append("MCScaleGain1EB%s01sigma" % direction)
+#            phosystlabels.append("MCScaleGain6EB%s01sigma" % direction)
+#            phosystlabels.append("MCScaleGain1EB%s01sigma" % direction)
             jetsystlabels.append("JEC%s01sigma" % direction)
             jetsystlabels.append("JER%s01sigma" % direction)
             jetsystlabels.append("PUJIDShift%s01sigma" % direction)
@@ -232,15 +232,15 @@ if customize.processId.count("h_") or customize.processId.count("vbf_") or custo
             variablesToUse.append("MuonMiniIsoWeight%s01sigma[1,-999999.,999999.] := weight(\"MuonMiniIsoWeight%s01sigma\")" % (direction,direction))
 	    variablesToUse.append("JetBTagCutWeight%s01sigma[1,-999999.,999999.] := weight(\"JetBTagCutWeight%s01sigma\")" % (direction,direction))
             variablesToUse.append("JetBTagReshapeWeight%s01sigma[1,-999999.,999999.] := weight(\"JetBTagReshapeWeight%s01sigma\")" % (direction,direction))
-            variablesToUse.append("THU_ggH_Mu%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_Mu%s01sigma\")" % (direction,direction))
-            variablesToUse.append("THU_ggH_Res%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_Res%s01sigma\")" % (direction,direction))
-            variablesToUse.append("THU_ggH_Mig01%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_Mig01%s01sigma\")" % (direction,direction))
-            variablesToUse.append("THU_ggH_Mig12%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_Mig12%s01sigma\")" % (direction,direction))
-            variablesToUse.append("THU_ggH_VBF2j%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_VBF2j%s01sigma\")" % (direction,direction))
-            variablesToUse.append("THU_ggH_VBF3j%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_VBF3j%s01sigma\")" % (direction,direction))
-            variablesToUse.append("THU_ggH_PT60%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_PT60%s01sigma\")" % (direction,direction))
-            variablesToUse.append("THU_ggH_PT120%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_PT120%s01sigma\")" % (direction,direction))
-            variablesToUse.append("THU_ggH_qmtop%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_qmtop%s01sigma\")" % (direction,direction))
+#            variablesToUse.append("THU_ggH_Mu%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_Mu%s01sigma\")" % (direction,direction))
+#            variablesToUse.append("THU_ggH_Res%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_Res%s01sigma\")" % (direction,direction))
+#            variablesToUse.append("THU_ggH_Mig01%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_Mig01%s01sigma\")" % (direction,direction))
+#            variablesToUse.append("THU_ggH_Mig12%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_Mig12%s01sigma\")" % (direction,direction))
+#            variablesToUse.append("THU_ggH_VBF2j%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_VBF2j%s01sigma\")" % (direction,direction))
+#            variablesToUse.append("THU_ggH_VBF3j%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_VBF3j%s01sigma\")" % (direction,direction))
+#            variablesToUse.append("THU_ggH_PT60%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_PT60%s01sigma\")" % (direction,direction))
+#            variablesToUse.append("THU_ggH_PT120%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_PT120%s01sigma\")" % (direction,direction))
+#            variablesToUse.append("THU_ggH_qmtop%s01sigma[1,-999999.,999999.] := ggHweightCentralised(\"THU_ggH_qmtop%s01sigma\")" % (direction,direction))
             for r9 in ["HighR9","LowR9"]:
                 for region in ["EB","EE"]:
                     phosystlabels.append("ShowerShape%s%s%s01sigma"%(r9,region,direction))
@@ -294,8 +294,9 @@ process.source = cms.Source ("PoolSource",
 #"root://eoscms.cern.ch//eos/cms//store/group/phys_higgs/cmshgg/sethzenz/flashgg/RunIISummer16-2_4_1-25ns_Moriond17/2_4_1/bbHToGG_M-125_4FS_ybyt_13TeV_amcatnlo/RunIISummer16-2_4_1-25ns_Moriond17-2_4_1-v0-RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/170114_095140/0000/myMicroAODOutputFile_9.root"
 #"root://eoscms.cern.ch//eos/cms//store/group/phys_higgs/cmshgg/sethzenz/flashgg/RunIISummer16-2_4_1-25ns_Moriond17/2_4_1/bbHToGG_M-125_4FS_yb2_13TeV_amcatnlo/RunIISummer16-2_4_1-25ns_Moriond17-2_4_1-v0-RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/170114_095013/0000/myMicroAODOutputFile_1.root"
 #"root://eoscms.cern.ch//eos/cms//store/group/phys_higgs/cmshgg/sethzenz/flashgg/RunIISummer16-2_4_1-25ns_Moriond17/2_4_1/GluGluHToGG_M125_13TeV_amcatnloFXFX_pythia8/RunIISummer16-2_4_1-25ns_Moriond17-2_4_1-v0-RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext2-v1/170113_234241/0000/myMicroAODOutputFile_1.root"
-"root://eoscms.cern.ch//eos/cms//store/group/phys_higgs/cmshgg/sethzenz/flashgg/ReMiniAOD-03Feb2017-2_5_4/2_5_1/DoubleEG/ReMiniAOD-03Feb2017-2_5_4-2_5_1-v0-Run2016E-03Feb2017-v1/170310_111722/0000/myMicroAODOutputFile_1.root"
-#"root://eoscms.cern.ch//eos/cms/store/group/phys_higgs/cmshgg/sethzenz/flashgg/ReMiniAOD-03Feb2017-2_5_0-test/2_5_0/DoubleEG/ReMiniAOD-03Feb2017-2_5_0-test-2_5_0-v0-Run2016G-03Feb2017-v1/170210_054444/0000/myMicroAODOutputFile_264.root"
+#"root://eoscms.cern.ch//eos/cms//store/group/phys_higgs/cmshgg/sethzenz/flashgg/ReMiniAOD-03Feb2017-2_5_4/2_5_1/DoubleEG/ReMiniAOD-03Feb2017-2_5_4-2_5_1-v0-Run2016E-03Feb2017-v1/170310_111722/0000/myMicroAODOutputFile_1.root"
+"root://eoscms.cern.ch//eos/cms//store/group/phys_higgs/cmshgg/sethzenz/flashgg/RunIISummer16-2_4_1-25ns_Moriond17/2_4_1/GluGluHToGG_M125_13TeV_amcatnloFXFX_pythia8/RunIISummer16-2_4_1-25ns_Moriond17-2_4_1-v0-RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6_ext2-v1/170113_234241/0000/myMicroAODOutputFile_1.root"
+#"root://eoscms.cern.ch//eos/cms/store/group/phys_higgs/cmshgg/sethzenz/flashgg/LegacyReReco-07Aug2017-2_6_1/2_6_1/DoubleEG/LegacyReReco-07Aug2017-2_6_1-2_6_1-v1-Run2016B-07Aug17_ver2-v2/180607_192608/0000/myMicroAODOutputFile_7.root"
 #"root://eoscms.cern.ch//eos/cms/store/group/phys_higgs/cmshgg/sethzenz/flashgg/RunIISummer16-2_4_1-25ns_Moriond17/2_4_1/VBFHToGG_M-125_13TeV_powheg_pythia8/RunIISummer16-2_4_1-25ns_Moriond17-2_4_1-v0-RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/170114_092754/0000/myMicroAODOutputFile_10.root"
 #"root://eoscms.cern.ch//eos/cms/store/group/phys_higgs/cmshgg/ferriff/flashgg/RunIISpring16DR80X-2_3_0-25ns_Moriond17_MiniAODv2/2_3_0/DoubleEG/RunIISpring16DR80X-2_3_0-25ns_Moriond17_MiniAODv2-2_3_0-v0-Run2016B-23Sep2016-v2/161114_162452/0000/myMicroAODOutputFile_10.root"
 #"root://eoscms.cern.ch//eos/cms/store/group/phys_higgs/cmshgg/sethzenz/flashgg/RunIISummer16-2_4_1-25ns_Moriond17/2_4_1/VHToGG_M120_13TeV_amcatnloFXFX_madspin_pythia8/RunIISummer16-2_4_1-25ns_Moriond17-2_4_1-v0-RunIISummer16MiniAODv2-PUMoriond17_80X_mcRun2_asymptotic_2016_TrancheIV_v6-v1/170114_094407/0000/myMicroAODOutputFile_19.root"
@@ -402,9 +403,8 @@ for tag in tagList:
               currentVariables = systematicVariables
       if tagName == "NoTag":
           if customize.doHTXS:
-              #currentVariables = ["stage0cat[72,9.5,81.5] := tagTruth().HTXSstage0cat"]
-              currentVariables = ["stage0cat[72,9.5,81.5] := tagTruth().HTXSstage0cat",
-                                  "stage1cat[1000,-0.5,999.5] := tagTruth().HTXSstage1cat"]
+              currentVariables = ["stage0cat[72,9.5,81.5] := tagTruth().HTXSstage0cat"]
+#              currentVariables = ["stage0cat[72,9.5,81.5] := tagTruth().HTXSstage0cat", "stage1cat[1000,-0.5,999.5] := tagTruth().HTXSstage1cat"]
           else:
               currentVariables = []
       isBinnedOnly = (systlabel !=  "")
