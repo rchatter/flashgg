@@ -15,7 +15,7 @@ Get everything you need, starting from a clean area:
  cmsenv
  git cms-init
  cd $CMSSW_BASE/src 
- git clone https://github.com/rchatter/flashgg flashgg
+ git clone https://github.com/ArnabPurohit/flashgg flashgg
  cd flashgg
  git checkout forLegacy2016_Working 
  cd ..
@@ -25,7 +25,7 @@ Get everything you need, starting from a clean area:
 If everything now looks reasonable, you can build (note flashgg/Validation does not compile right now):
  ```
  cd $CMSSW_BASE/src
- SCRAM_IGNORE_PACKAGES="flashgg/Validation" scram b -j 3
+ scram b -j 4
  ```
 And a very basic workflow test:
  ```
