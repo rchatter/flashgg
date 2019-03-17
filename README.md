@@ -22,7 +22,7 @@ Get everything you need, starting from a clean area:
  source flashgg/setup.sh
  ```
 
-If everything now looks reasonable, you can build (note flashgg/Validation does not compile right now):
+If everything now looks reasonable, you can build (note: if it does not compile at the first attempt try running "scram b -j 4" once more.):
  ```
  cd $CMSSW_BASE/src
  scram b -j 4
@@ -34,6 +34,8 @@ And a very basic workflow test:
  cmsRun Taggers/test/simple_Tag_test.py
  cmsRun Taggers/test/diphotonsDumper_cfg.py
  cmsRun Systematics/test/workspaceStd.py processId=ggh_125
+For Validation package
+ cmsRun Validation/test/makeTreePhotons_80X.py
  ```
 
 These are just some test examples; the first makes MicroAOD from a MiniAOD file accessed via xrootd, 
