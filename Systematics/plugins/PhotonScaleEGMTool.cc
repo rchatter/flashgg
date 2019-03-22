@@ -72,7 +72,7 @@ namespace flashgg {
         if( overall_range_( y ) ) {
 //            std::cout<<std::endl<<" Run = "<<run_number_<<" ET = "<<y.et()<<" Eta = "<<y.superCluster()->eta()<<" R9 = "<<y.full5x5_r9()<<" Gain = "<<gain<<" SCALE  === "<<scaler_.scaleCorr(run_number_, y.et(), y.superCluster()->eta(), y.full5x5_r9(), gain)<<std::endl;
             auto shift_val = scaler_.scaleCorr(run_number_, y.et(), y.superCluster()->eta(), y.full5x5_r9(), gain);
-            auto shift_err = scaler_.scaleCorrUncert(run_number_, y.et(), y.superCluster()->eta(), y.full5x5_r9(), gain);            
+            auto shift_err = scaler_.scaleCorrUncert(run_number_, y.et(), y.superCluster()->eta(), y.full5x5_r9(), gain, uncBitMask_);            
             if (!applyCentralValue()) shift_val = 1.;
             float scale = shift_val + syst_shift * shift_err;
             if( debug_ ) {
