@@ -108,6 +108,9 @@ cd $CMSSW_BASE/src
 echo "EGM Pho ID recipe, Summer16"
 git cms-merge-topic ikrav:egm_id_80X_v3_photons
 
+echo "Cloning EgammaAnalysis TnPTreeProducer, CMSSW_8_0_X"
+
+git clone -b CMSSW_8_0_X https://github.com/cms-analysis/EgammaAnalysis-TnPTreeProducer EgammaAnalysis/TnPTreeProducer
 # Tag updated for 8_0_28 and may require further investigation
 echo "grabbing MET topic updates..."
 git cms-merge-topic cms-met:METRecipe_8020_for80Xintegration -u

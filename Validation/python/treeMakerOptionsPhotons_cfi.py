@@ -2,15 +2,14 @@ import FWCore.ParameterSet.Config as cms
 
 def setModules(process, options):
 
-    process.sampleInfo = cms.EDProducer("tnp::FlashggSampleInfoTree",
-                                        )
+    #process.sampleInfo = cms.EDProducer("tnp::FlashggSampleInfoTree")
 
     from HLTrigger.HLTfilters.hltHighLevel_cfi import hltHighLevel
     process.hltFilter = hltHighLevel.clone()
     process.hltFilter.throw = cms.bool(False)
     process.hltFilter.HLTPaths = options['TnPPATHS']
     
-    from PhysicsTools.TagAndProbe.pileupConfiguration_cfi import pileupProducer
+    from EgammaAnalysis.TnPTreeProducer.pileupConfiguration_cfi import pileupProducer
     process.pileupReweightingProducer = pileupProducer.clone()    
 
     ###################################################################
@@ -24,7 +23,7 @@ def setModules(process, options):
                                                  subleadingPreselection = cms.string(options['SUBLEADING_PRESELECTION']),
                                                  vertexSelection = cms.int32(-1), # -1 means take the chosen vertex, otherwise use the index to select 2it
                                                  diPhotonMVATag = cms.InputTag("flashggDiPhotonMVA"),
-                                                 diphotonMVAThreshold = cms.double(-0.6) #Previous value was -1.0
+                                                 diphotonMVAThreshold = cms.double(-1.0) #Previous value was -0.6
                                                  )
 
     process.goodPhotonTagL1 = cms.EDProducer("FlashggPhotonL1CandProducer",
@@ -75,6 +74,7 @@ def setModules(process, options):
                                                filterNames = options['TnPHLTTagFilters'],
                                                inputs      = cms.InputTag("goodPhotonTagsIDMVA"),
                                                bits        = cms.InputTag('TriggerResults::HLT'),
+                                               #objects     = cms.InputTag('slimmedPatTrigger'),
                                                objects     = cms.InputTag('selectedPatTrigger'),
                                                dR          = cms.double(0.3),
                                                isAND       = cms.bool(True)
@@ -84,6 +84,7 @@ def setModules(process, options):
                                                  filterNames = options['TnPHLTProbeFilters'],
                                                  inputs      = cms.InputTag("goodPhotonProbes"),
                                                  bits        = cms.InputTag('TriggerResults::HLT'),
+                                                 #objects     = cms.InputTag('slimmedPatTrigger'),
                                                  objects     = cms.InputTag('selectedPatTrigger'),
                                                  dR          = cms.double(0.3),
                                                  isAND       = cms.bool(True)
