@@ -354,14 +354,8 @@ emptySigma = cms.PSet(
     secondVar = cms.vint32()
 )
 
-#scalesAndSmearingsPrefix = cms.string("EgammaAnalysis/ElectronTools/data/80X_ichepV2_2016_pho")
-#scalesAndSmearingsPrefixForSigmaEOverE = cms.string("EgammaAnalysis/ElectronTools/data/Golden22June")
-##scalesAndSmearingsPrefix = cms.string("EgammaAnalysis/ElectronTools/data/Winter_2016_reReco_v1_ele")
-##scalesAndSmearingsPrefixForSigmaEOverE = cms.string("EgammaAnalysis/ElectronTools/data/Winter_2016_reReco_v1_ele")
-#scalesAndSmearingsPrefix = cms.string("EgammaAnalysis/ElectronTools/data/Moriond17_74x_pho")
-#scalesAndSmearingsPrefixForSigmaEOverE = cms.string("EgammaAnalysis/ElectronTools/data/Winter_2016_reReco_v1_ele")
-scalesAndSmearingsPrefix = cms.string("EgammaAnalysis/ElectronTools/data/Legacy2016_07Aug2017_FineEtaR9_v3_ele_unc")
-scalesAndSmearingsPrefixForSigmaEOverE = cms.string("EgammaAnalysis/ElectronTools/data/Legacy2016_07Aug2017_FineEtaR9_v3_ele_unc")
+scalesAndSmearingsPrefix = cms.string("EgammaAnalysis/ElectronTools/data/Legacy2016_HIG19004")
+scalesAndSmearingsPrefixForSigmaEOverE = cms.string("EgammaAnalysis/ElectronTools/data/Legacy2016_HIG19004")
 
 
 

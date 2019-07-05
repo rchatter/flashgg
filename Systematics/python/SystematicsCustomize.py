@@ -206,8 +206,8 @@ def customizeJetSystematicsForData(process):
 
     #hopefully a temporary hack
     from os import environ
-    process.jec.connect = cms.string('sqlite_file:%s/src/flashgg/Systematics/data/JEC/Summer16_23Sep2016AllV4_DATA.db' % environ['CMSSW_BASE'])
-    process.jec.toGet[0].tag = cms.string('JetCorrectorParametersCollection_Summer16_23Sep2016AllV4_DATA_AK4PFchs')
+    process.jec.connect = cms.string('sqlite_file:%s/src/flashgg/Systematics/data/JEC/Summer16_07Aug2017All_V11_80X_DATA.db' % environ['CMSSW_BASE'])
+    process.jec.toGet[0].tag = cms.string('JetCorrectorParametersCollection_Summer16_07Aug2017All_V11_80X_DATA_AK4PFchs')
 
 
 def useEGMTools(process):
